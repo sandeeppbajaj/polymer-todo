@@ -1,0 +1,23 @@
+{
+  "name": "polymer-todo",
+  "authors": [
+    "Sandeepp Bajaj <sandeepp.bajaj@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.4.0",
+    "iron-elements": "~1.0.10",
+    "paper-elements": "~1.0.7"
+  }
+}
