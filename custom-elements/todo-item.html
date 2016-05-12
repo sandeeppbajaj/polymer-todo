@@ -1,0 +1,12 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="todo-item">
+    <template>
+        <input type="checkbox" checked="{{todo.done::change}}"> {{todo.name}} {{todo.done}}
+    </template>
+    <script>
+        Polymer({
+            is: 'todo-item'
+        });
+    </script>
+</dom-module>
