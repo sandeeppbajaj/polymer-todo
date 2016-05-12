@@ -8,9 +8,9 @@
     </style>
     <template>
         <ul>
-            <template is="dom-repeat" items="{{todos}}">
+            <template is="dom-repeat" as="todo" items="{{todos}}" observe="done" filter="{{_filter(filterBy)}}">
                 <li>
-                    <todo-item todo="{{item}}"></todo-item>
+                    <todo-item todo="{{todo}}"></todo-item>
                 </li>
             </template>
         </ul>
@@ -18,7 +18,24 @@
 
     <script>
         Polymer({
-            is: 'todo-list'
+            is: 'todo-list',
+            filterBy: {
+                type: String,
+                value: 'all'
+            },
+            _filter: function (filterBy) {
+                return function (todo) {
+                    if(filterBy === 'all'){
+                        return true;
+                    }else if(filterBy === 'uncompleted') {
+                        return !todo.done;
+                    }else if(filterBy === 'completed') {
+                        return todo.done;
+                    }else {
+                        return false;
+                    }
+                }
+            }
         });
     </script>
 </dom-module>

@@ -6,7 +6,12 @@
     <template>
         <div>
             <todo-data todos="{{todos}}"></todo-data>
-            <todo-list todos="{{todos}}"></todo-list>
+
+            <h3>Uncompleted Items</h3>
+            <todo-list todos="{{todos}}" filter-by="uncompleted"></todo-list>
+
+            <h3>Completed Items</h3>
+            <todo-list todos="{{todos}}" filter-by="completed"></todo-list>
         </div>
     </template>
 
