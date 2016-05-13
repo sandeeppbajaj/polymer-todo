@@ -1,9 +1,18 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
+<link rel="import" href="../bower_components/paper-material/index.html">
 <dom-module id="todo-item">
+    <style>
+        paper-material {
+            padding: 10px 0;
+        }
+    </style>
+
     <template>
-        <input type="checkbox" checked="{{todo.done::change}}"> {{todo.name}} {{todo.done}}
+        <paper-material>
+            <input type="checkbox" checked="{{todo.done::change}}"> {{todo.name}} {{todo.done}}
+        </paper-material>
     </template>
+
     <script>
         Polymer({
             is: 'todo-item'
