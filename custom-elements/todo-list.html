@@ -23,6 +23,16 @@
                 type: String,
                 value: 'all'
             },
+            listeners: {
+                'delete': '_handleDelete'
+            },
+            _handleDelete: function (e) {
+              this._deleteItem(e.detail.todo);
+            },
+            _deleteItem: function (todo) {
+                var index = this.todos.indexOf(todo);
+                this.splice('todos', index, 1);
+            },
             _filter: function (filterBy) {
                 return function (todo) {
                     if(filterBy === 'all'){

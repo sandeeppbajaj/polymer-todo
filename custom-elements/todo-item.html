@@ -1,21 +1,34 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-material/index.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <dom-module id="todo-item">
     <style>
         paper-material {
             padding: 10px 0;
+        }
+        paper-icon-button {
+            color: #7D8B99;
+        }
+
+        paper-icon-button:hover {
+            color: #ff5260;
         }
     </style>
 
     <template>
         <paper-material>
             <input type="checkbox" checked="{{todo.done::change}}"> {{todo.name}}
+            <paper-icon-button icon="delete" on-tap="_delete"></paper-icon-button>
         </paper-material>
     </template>
 
     <script>
         Polymer({
-            is: 'todo-item'
+            is: 'todo-item',
+            _delete: function() {
+                this.fire('delete', {todo: this.todo});
+            }
         });
     </script>
 </dom-module>
